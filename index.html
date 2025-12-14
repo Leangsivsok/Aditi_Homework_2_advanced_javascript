@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+  </head>
+  <body class="bg-gray-100">
+    <div class="min-h-screen flex items-center justify-center p-4">
+      <div class="w-full max-w-2xl bg-white shadow-lg rounded-lg p-6">
+        <h1 class="text-3xl font-semibold text-center mb-4">Note App</h1>
+
+        <form id="noteForm" class="space-y-4">
+          <!-- Search + Filter -->
+          <div class="flex gap-4 mb-4">
+            <input
+              id="searchInput"
+              type="text"
+              placeholder="Search notes..."
+              class="flex-1 p-2 border rounded-md"
+            />
+
+            <select id="tagFilter" class="p-2 border rounded-md">
+              <option value="all">All Tags</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="title" class="block text-sm font-medium mb-1"
+              >Title</label
+            >
+            <input
+              id="title"
+              name="title"
+              type="text"
+              class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-300"
+              placeholder="Note title"
+            />
+          </div>
+
+          <div>
+            <label for="content" class="block text-sm font-medium mb-1"
+              >Content</label
+            >
+            <textarea
+              id="content"
+              name="content"
+              rows="6"
+              class="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-300"
+              placeholder="Write your note..."
+            ></textarea>
+          </div>
+
+          <div>
+            <label for="tags" class="block text-sm font-medium mb-1"
+              >Tags</label
+            >
+            <input
+              id="tags"
+              name="tags"
+              type="text"
+              class="w-1/2 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-300"
+              placeholder="Enter tags"
+            />
+            <button
+              type="button"
+              id="addTagBtn"
+              class="px-4 py-2 ms-5 bg-indigo-600 text-white rounded hover:bg-indigo-700"
+            >
+              Add Tag
+            </button>
+          </div>
+
+          <!-- for showing the add tag here in the line -->
+          <div id="tagContainer" class="flex flex-wrap gap-2"></div>
+
+          <div class="flex justify-end gap-2">
+            <button
+              type="reset"
+              class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300"
+            >
+              Reset
+            </button>
+            <button
+              type="submit"
+              class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700"
+            >
+              Add Note
+            </button>
+          </div>
+        </form>
+
+        <div id="notes" class="mt-6 grid gap-4"></div>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
